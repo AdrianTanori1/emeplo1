@@ -11,7 +11,7 @@ pipeline {
         stage('Build and Run') {
             steps {
             script {
-                    bat 'SET PATH=C://ProgramData//Microsoft//Windows//Start Menu//Programs//Node;%PATH%'
+                    bat 'SET PATH=C:/ProgramData/Microsoft/Windows/Start Menu/Programs/Node;%PATH%'
                     // Ahora deberías poder ejecutar el comando npm
                     bat 'npm install express || true'
                     bat 'npm run start || true'  // Usa '|| true' para que la ejecución no falle si npm devuelve un código de error
