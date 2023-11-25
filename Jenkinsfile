@@ -27,7 +27,7 @@ pipeline {
             steps {
                 // Cambia al directorio donde se encuentra tu archivo package.json
                 dir('C:\\Users\\atanori\\Documents\\UTH\\emeplo1') {
-                try {
+                    try {
                         // Ejecuta npm start
                         bat '"C:\\Program Files\\nodejs\\node.exe" app.js'
                     } catch (Exception e) {
