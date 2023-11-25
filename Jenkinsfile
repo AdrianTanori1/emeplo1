@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     // Ejecución del servidor Node.js
-                    bat '"C:\\Program Files\\nodejs\\node.exe" server.js || true'
+                    bat '"C:\\Program Files\\nodejs" server.js || true'
                 }
             }
         }
