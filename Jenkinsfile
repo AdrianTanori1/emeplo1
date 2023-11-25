@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('listo') {
             steps {
                 checkout scm
             }
         }
 
-    stage('Build and Run') {
+    stage('comprobar') {
         steps {
         script {
                 // Especifica la ruta completa al ejecutable de Node.js
@@ -22,4 +22,11 @@ pipeline {
         }
     }
 }
+    stage('iniciar') {
+        steps {
+        script {
+                bat '"C:\\Program Files\\nodejs\\npm" start || true'
+            }
+        }
+    }
 }
