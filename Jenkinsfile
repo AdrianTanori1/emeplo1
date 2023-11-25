@@ -20,19 +20,5 @@ pipeline {
             }
         }
     }
-    stage('Build')
-    steps {
-                // Aquí van los pasos para la etapa de Build
-            
-        }
-    post {
-        always {
-            // Esto se ejecutará siempre, incluso si hay errores
-            script {
-                // Detener el servidor web después de completar la construcción
-                bat 'taskkill /F /IM node.exe'
-            }
-        }
-    }
 }
 }
