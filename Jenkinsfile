@@ -11,9 +11,11 @@ pipeline {
         stage('Build and Run') {
             steps {
                 script {
-                    // Instalamos las dependencias y ejecutamos el servidor web
+                    // Agrega la ruta de instalación de Node.js a la variable de entorno PATH
+                    bat 'SET PATH=%PATH%;C:\\Program Files\\nodejs'
+                    
+                    // Ahora deberías poder ejecutar el comando npm
                     bat 'npm install'
-                    bat 'start /B npm start'
                 }
             }
         }
@@ -21,7 +23,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Aquí puedes agregar pasos adicionales de implementación si es necesario
+                    // Agrega aquí pasos adicionales de implementación si es necesario
                     echo 'Implementación completa'
                 }
             }
@@ -38,3 +40,4 @@ pipeline {
         }
     }
 }
+
