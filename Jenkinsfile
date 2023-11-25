@@ -11,9 +11,6 @@ pipeline {
         stage('Build and Run') {
             steps {
             script {
-                    // Agrega la ruta de Node.js al sistema
-                    bat 'SET PATH=C:/Program Files/nodejs;%PATH%'
-            
                     // Ahora deberías poder ejecutar el comando npm
                     bat 'npm install express || true'
                     bat 'npm run start || true'  // Usa '|| true' para que la ejecución no falle si npm devuelve un código de error
