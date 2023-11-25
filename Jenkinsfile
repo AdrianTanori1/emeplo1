@@ -12,7 +12,7 @@ pipeline {
             steps {
             script {
             // Agrega la ruta de Node.js al sistema
-                bat 'SET PATH=C:\Program Files\nodejs;%PATH%'
+                bat 'SET PATH=C:/Program Files/nodejs;%PATH%'
             
                     // Ahora deberías poder ejecutar el comando npm
                     bat 'npm install || true'  // Usa '|| true' para que la ejecución no falle si npm devuelve un código de error
