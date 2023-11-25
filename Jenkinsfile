@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     // Cambiar al directorio de trabajo de tu aplicación
-                    dir('C:\\Users\\atanori\\Documents\\UTH\\emeplo1\\package.json') {
+                    dir('C:\\Users\\atanori\\Documents\\UTH\\emeplo1') {
                         // Ejecución del servidor Node.js a través de npm start
                         bat '"C:\\Program Files\\nodejs\\npm" run start || true'
                 }
