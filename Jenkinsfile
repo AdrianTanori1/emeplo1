@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('listo') {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
         }
 
-    stage('comprobar') {
+    stage('Install Dependencies') {
         steps {
         script {
                 // Especifica la ruta completa al ejecutable de Node.js
@@ -16,15 +16,14 @@ pipeline {
             
                 // Ejecutar npm install express
                 bat '"C:\\Program Files\\nodejs\\npm" install express || true'
-                // Ejecución del servidor Node.js
-                bat '"C:\\Program Files\\nodejs\\npm" start || true'
             }
         }
     }
 }
-    stage('iniciar') {
+    stage('Build and Run') {
         steps {
         script {
+                // Ejecución del servidor Node.js
                 bat '"C:\\Program Files\\nodejs\\npm" start || true'
             }
         }
