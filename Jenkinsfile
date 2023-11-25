@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                // Paso para obtener el código fuente del repositorio
                 checkout scm
             }
         }
@@ -13,7 +14,7 @@ pipeline {
                 script {
                     // Especifica la ruta completa al ejecutable de Node.js
                     bat '"C:\\Program Files\\nodejs\\node.exe" -v'
-                
+
                     // Cambia al directorio donde se encuentra tu archivo package.json
                     dir('C:\\Users\\atanori\\Documents\\UTH\\emeplo1') {
                         // Ejecuta npm install express
@@ -30,7 +31,7 @@ pipeline {
                     try {
                         // Ejecuta npm start
                         bat '"C:\\Program Files\\nodejs\\node.exe" app.js'
-                        } catch (Exception e) {
+                    } catch (Exception e) {
                         // Manejo de errores
                         echo "Error: ${e.message}"
                     }
