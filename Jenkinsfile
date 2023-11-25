@@ -2,14 +2,39 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build and Run') {
             steps {
                 script {
-                    // Comando equivalente en Windows (sin nohup)
-                    bat 'start /B comando_en_segundo_plano'
+                    // Instalamos las dependencias y ejecutamos el servidor web
+                    bat 'npm install'
+                    bat 'start /B npm start'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Aquí puedes agregar pasos adicionales de implementación si es necesario
+                    echo 'Implementación completa'
                 }
             }
         }
     }
-}
 
+    post {
+        always {
+            // Esto se ejecutará siempre, incluso si hay errores
+            script {
+                // Detener el servidor web después de completar la construcción
+                bat 'taskkill /F /IM node.exe'
+            }
+        }
+    }
+}
