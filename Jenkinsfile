@@ -1,23 +1,15 @@
 pipeline {
     agent any
- 
+
     stages {
-        stage('Instalar Dependencias') {
+        stage('Build') {
             steps {
                 script {
-                    // Instala las dependencias del proyecto
-                    sh 'npm install express'
-                }
-            }
-        }
- 
-        stage('Construir y Desplegar') {
-            steps {
-                script {
-                    // Ejecuta el script de inicio de la aplicación
-                    sh 'npm run start'
+                    // Comando equivalente en Windows (sin nohup)
+                    bat 'start /B comando_en_segundo_plano'
                 }
             }
         }
     }
 }
+
