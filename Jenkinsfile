@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Instala las dependencias del proyecto
-                    sh 'npm install'
+                    sh 'npm install express'
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     // Ejecuta el script de inicio de la aplicación
-                    sh 'npm start'
+                    sh 'npm run start'
                 }
             }
         }
