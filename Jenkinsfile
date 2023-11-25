@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Paso para obtener el código fuente del repositorio
                 checkout scm
             }
         }
@@ -28,12 +27,14 @@ pipeline {
             steps {
                 // Cambia al directorio donde se encuentra tu archivo package.json
                 dir('C:\\Users\\atanori\\Documents\\UTH\\emeplo1') {
-                    try {
-                        // Ejecuta npm start
-                        bat '"C:\\Program Files\\nodejs\\node.exe" app.js || true'
-                    } catch (Exception e) {
-                        // Manejo de errores
-                        echo "Error: ${e.message}"
+                    script {
+                        try {
+                            // Ejecuta npm start
+                            bat '"C:\\Program Files\\nodejs\\node.exe" app.js'
+                        } catch (Exception e) {
+                            // Manejo de errores
+                            echo "Error: ${e.message}"
+                        }
                     }
                 }
             }
