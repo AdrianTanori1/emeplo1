@@ -17,7 +17,7 @@ pipeline {
                 // Ejecutar npm install express
                 bat '"C:\\Program Files\\nodejs\\npm" install express || true'
                 // Ejecución del servidor Node.js
-                bat "node server.js"
+                bat '"C:\\Program Files\\nodejs\\npm" start || true'
             }
         }
     }
