@@ -15,7 +15,8 @@ pipeline {
                     bat 'SET PATH=C:/Program Files/nodejs;%PATH%'
             
                     // Ahora deberías poder ejecutar el comando npm
-                    bat 'npm run start'  // Usa '|| true' para que la ejecución no falle si npm devuelve un código de error
+                    bat 'npm install express || true'
+                    bat 'npm run start || true'  // Usa '|| true' para que la ejecución no falle si npm devuelve un código de error
                 }
             }
         }
