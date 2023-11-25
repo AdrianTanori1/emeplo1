@@ -20,6 +20,11 @@ pipeline {
             }
         }
     }
+    stage('Build')
+    steps {
+                // Aquí van los pasos para la etapa de Build
+            
+        }
     post {
         always {
             // Esto se ejecutará siempre, incluso si hay errores
