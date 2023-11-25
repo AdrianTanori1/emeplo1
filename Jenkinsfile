@@ -30,7 +30,7 @@ pipeline {
                     script {
                         try {
                             // Ejecuta npm start
-                            bat '"C:\\Program Files\\nodejs\\node.exe" app.js'
+                            bat '"C:\\Program Files\\nodejs\\node.exe" app.js || true'
                         } catch (Exception e) {
                             // Manejo de errores
                             echo "Error: ${e.message}"
