@@ -27,9 +27,9 @@ pipeline {
             steps {
                 script {
                     // Cambia al directorio donde se encuentra tu archivo package.json
-                    dir('C:\\Users\\atanori\\Documents\\UTH\\emeplo1\\app.js') {
+                    dir('C:\\Users\\atanori\\Documents\\UTH\\emeplo1') {
                         // Ejecuta npm start
-                        bat '"C:\\Program Files\\nodejs\\npm" run start || true'
+                        bat '"C:\\Program Files\\nodejs\\npm" app.js || true'
                     }
                 }
             }
