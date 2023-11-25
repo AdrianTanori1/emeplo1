@@ -8,16 +8,17 @@ pipeline {
             }
         }
 
-        stage('Build and Run') {
-            steps {
-            script {
-                    bat 'PATH=C:\\Program Files\\nodejs'
-                    // Ahora deberías poder ejecutar el comando npm
-                    bat 'npm install express || true'
-                    bat 'npm run start || true'  // Usa '|| true' para que la ejecución no falle si npm devuelve un código de error
-                }
+    stage('Build and Run') {
+        steps {
+        script {
+                // Especifica la ruta completa al ejecutable de Node.js
+                bat '"C:\\Program Files\\nodejs\\node.exe" -v'
+            
+                // Ejecutar npm install express
+                bat '"C:\\Program Files\\nodejs\\npm" install express || true'
             }
         }
+    }
         stage('Check Node.js and npm versions') {
             steps {
                 script {
