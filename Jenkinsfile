@@ -23,8 +23,10 @@ pipeline {
         stage('Build and Run') {
             steps {
                 script {
-                    // Ejecución del servidor Node.js
-                    bat '"C:\\Program Files\\nodejs\\npm" run start || true'
+                    // Cambiar al directorio de trabajo de tu aplicación
+                    dir('C:\\Users\\atanori\\Documents\\UTH\\emeplo1\\package.json') {
+                        // Ejecución del servidor Node.js a través de npm start
+                        bat '"C:\\Program Files\\nodejs\\npm" run start || true'
                 }
             }
         }
