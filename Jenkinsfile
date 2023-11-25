@@ -20,7 +20,14 @@ pipeline {
                 }
             }
         }
-
+        stage('Check Node.js and npm versions') {
+            steps {
+                script {
+                    bat 'node -v'
+                    bat 'npm -v'
+                }
+            }
+        }
         stage('Deploy') {
             steps {
                 script {
