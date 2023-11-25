@@ -29,7 +29,7 @@ pipeline {
                     // Cambia al directorio donde se encuentra tu archivo package.json
                     dir('C:\\Users\\atanori\\Documents\\UTH\\emeplo1') {
                         // Ejecuta npm start
-                        bat '"C:\\Program Files\\nodejs\\npm" app.js start || true'
+                        bat '"C:\\Program Files\\nodejs\\npm" app.js'
                     }
                 }
             }
